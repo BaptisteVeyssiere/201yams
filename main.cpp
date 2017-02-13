@@ -5,7 +5,7 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 13 17:44:03 2017 Nathan Scutari
-// Last update Mon Feb 13 19:03:52 2017 Nathan Scutari
+// Last update Mon Feb 13 19:05:52 2017 Nathan Scutari
 //
 
 #include <iostream>
@@ -100,14 +100,14 @@ int	get_arg(std::string entry, int arg_pos, int &arg1, int &arg2)
 
 int	parse_exec(int *dice, std::string entry)
 {
-  /* void	(*ptr[])(int *, int) =
-  {
-    yams,
-    four,
-    three,
-    straight,
-    pair,
-    };*/
+  void	(*ptr[])(int *, int) =
+    {
+      yams,
+      four,
+      three,
+      straight,
+      pair,
+    };
   int	i;
   int	arg1;
   int	arg2;
@@ -116,10 +116,10 @@ int	parse_exec(int *dice, std::string entry)
   if ((i = get_ptr_ofs(entry, w_end)) == -1 ||
       get_arg(entry, w_end, arg1, arg2))
     return (1);
-  /*  if (i == 5)
+  if (i == 5)
     full(dice, arg1, arg2);
   else
-  ptr[i](dice, arg1);*/
+    ptr[i](dice, arg1);
   return (0);
 }
 
