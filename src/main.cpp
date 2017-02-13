@@ -5,10 +5,11 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 13 17:44:03 2017 Nathan Scutari
-// Last update Mon Feb 13 19:05:52 2017 Nathan Scutari
+// Last update Mon Feb 13 19:43:31 2017 Baptiste Veyssiere
 //
 
 #include <iostream>
+#include "combinaisons.hpp"
 
 int	parse_dice_values(std::string dice, int i)
 {
@@ -137,8 +138,8 @@ int	parse_yams(char **av)
 
 int	write_help()
 {
-  std::cout << "USAGE" << std::endl << "\t\t./201yams d1 d2 d3 d4 d5 c" << std::endl;
-  std::cout << std::endl << "DESCRIPTION" << std::endl << "\t\td1\tvalue of the first die (0 if not thrown)" << std::endl << "\t\td2\tvalue of the second die (0 if not thrown)" << std::endl << "\t\td3\tvalue of the third die (0 if not thrown)" << std::endl << "\t\td4\tvalue of the fourth die (0 if not throw)" << std::endl << "\t\td5\tvalue of the fifth die (0 if not thrown)" << std::endl << "\t\tc\texpected combination" << std::endl;
+  std::cout << "USAGE" << std::endl << "           ./201yams d1 d2 d3 d4 d5 c" << std::endl;
+  std::cout << std::endl << "DESCRIPTION" << std::endl << "           d1\tvalue of the first die (0 if not thrown)" << std::endl << "           d2\tvalue of the second die (0 if not thrown)" << std::endl << "           d3\tvalue of the third die (0 if not thrown)" << std::endl << "           d4\tvalue of the fourth die (0 if not throw)" << std::endl << "           d5\tvalue of the fifth die (0 if not thrown)" << std::endl << "           c\texpected combination" << std::endl;
   return (0);
 }
 
