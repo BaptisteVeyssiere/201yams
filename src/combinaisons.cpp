@@ -5,7 +5,7 @@
 // Login   <veyssi_b@epitech.net>
 //
 // Started on  Mon Feb 13 17:43:46 2017 Baptiste Veyssiere
-// Last update Mon Feb 13 19:36:22 2017 Baptiste Veyssiere
+// Last update Wed Feb 15 16:37:46 2017 Baptiste Veyssiere
 //
 
 #include <math.h>
@@ -134,8 +134,10 @@ void	yams(int dices[5], int nbr)
   if (n < 1)
     proba = 100.0;
   else
-    proba = pow((double)1 / 6, n);
-  proba *= 100;
+    {
+      proba = pow((double)1 / 6, n);
+      proba *= 100;
+    }
   std::cout << "chances to get a " << nbr << " yams: " << std::fixed << std::setprecision(2) << proba << "%" << std::endl;
 }
 
