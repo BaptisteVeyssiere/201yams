@@ -5,7 +5,7 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 13 17:44:03 2017 Nathan Scutari
-// Last update Thu Feb 16 10:03:31 2017 Nathan Scutari
+// Last update Thu Feb 16 10:20:02 2017 Nathan Scutari
 //
 
 #include <iostream>
@@ -13,7 +13,7 @@
 
 int	parse_dice_values(std::string dice, int i)
 {
-  if (dice.length() != 1 || dice[0] < '0' || dice[1] > '6')
+  if (dice.length() != 1 || dice[0] < '0' || dice[0] > '6')
     {
       std::cerr << "Bad dice value: d" << i + 1 << ": syntax must be of the form: \"x\" where x >= 0 & <= 6" << std::endl;
       return (-1);
