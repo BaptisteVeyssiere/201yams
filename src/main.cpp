@@ -5,7 +5,7 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 13 17:44:03 2017 Nathan Scutari
-// Last update Mon Feb 13 19:43:31 2017 Baptiste Veyssiere
+// Last update Thu Feb 16 10:03:31 2017 Nathan Scutari
 //
 
 #include <iostream>
@@ -92,6 +92,8 @@ int	get_arg(std::string entry, int arg_pos, int &arg1, int &arg2)
 	  entry[arg_pos + 3] > '6')
 	return (write_err("Bad combination : must \"_x_y\" where x and y >= 1 & <= 6"));
       arg2 = entry[arg_pos + 3] - 48;
+      if (arg1 == arg2)
+	return (write_err("Full arguments have to be differents"));
       arg_pos = arg_pos + 2;
     }
   if (arg_pos + 2 != entry.size())
@@ -127,12 +129,19 @@ int	parse_exec(int *dice, std::string entry)
 int	parse_yams(char **av)
 {
   int	i;
+  int	zero;
   int	dice[5];
 
   i = -1;
   while (++i < 5)
     if ((dice[i] = parse_dice_values(av[i + 1], i)) == -1)
       return (1);
+  zero = 0;
+  for (int i = 0 ; i < 5 ; ++i)
+    if (dice[i] == 0)
+      ++zero;
+  if (zero != 0 && zero != 5)
+    return (write_err("Dice values must be either only 0 or none"));
   return (parse_exec(dice, epur_str(av[6])));
 }
 
